@@ -7,7 +7,7 @@ import pickle
 # Initiate App
 root = customtkinter.CTk()
 root.title("TismChatBot")
-root.geometry('720x600')
+root.geometry('1280x720')
 root.iconbitmap('TS.ico')
 
 # Set Color Scheme
@@ -40,7 +40,7 @@ def speak():
                     model = "text-davinci-003",
                     prompt = chat_entry.get(),
                     temperature = 0,
-                    max_tokens = 60,
+                    max_tokens = 1000,
                     top_p = 1.0,
                     frequency_penalty = 0.0,
                     presence_penalty = 0.0,
@@ -99,7 +99,7 @@ def key():
 
 
     # Resize App Larger
-    root.geometry('720x750')
+    root.geometry('1920x1080')
     # Reshow API Frame
     api_frame.pack(pady=30)
 
@@ -122,7 +122,7 @@ def save_key():
         # Hide API Frame
         api_frame.pack_forget()
         # Resize App Smaller
-        root.geometry('720x600')
+        root.geometry('1280x720')
     except Exception as e:
         my_text.insert(END, f"\n\n There was an error \n\n{e}")
 
@@ -134,7 +134,7 @@ text_frame.pack(pady=20)
 # Add Text Widget To Get ChatGPT Responses
 my_text = Text(text_frame,
                bg="#353935",
-               width=75,
+               width=200,
                bd=1,
                fg="#f5f5dc",
                relief="flat",
